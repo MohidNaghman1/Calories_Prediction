@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
 import pickle  # Make sure to import pickle
+import os
 
-# Load your pre-trained model
-with open('Calories_Prediction.pkl', 'rb') as file:
-    model = pickle.load(file)
+# Define the base directory and filename
+base_dir = '/mount/src/Calories_Prediction'
+filename = 'Calories_Prediction.py'
+
+# Construct the full path
+model_path = os.path.join(base_dir, filename)
 
 # Function to make predictions
 def predict_calories(gender, age, height, weight, duration, heart_rate, body_temp):
