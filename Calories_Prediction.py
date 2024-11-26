@@ -3,15 +3,10 @@ import pandas as pd
 import pickle  # Make sure to import pickle
 import os
 
-# Define the base directory and filename
-base_dir = '/mount/src/Calories_Prediction'
-filename = 'Calories_Prediction.py'
 
-# Construct the full path
-model_path = os.path.join(base_dir, filename)
-with open('Calories_Prediction.pkl', 'rb') as file:
+with open('/mount/src/calories_prediction/Calories_Prediction.pkl', 'rb') as file:
     model = pickle.load(file)
-
+    
 # Function to make predictions
 def predict_calories(gender, age, height, weight, duration, heart_rate, body_temp):
     input_data = pd.DataFrame({
