@@ -9,6 +9,8 @@ filename = 'Calories_Prediction.py'
 
 # Construct the full path
 model_path = os.path.join(base_dir, filename)
+with open('Calories_Prediction.pkl', 'rb') as file:
+    model = pickle.load(file)
 
 # Function to make predictions
 def predict_calories(gender, age, height, weight, duration, heart_rate, body_temp):
